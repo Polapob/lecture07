@@ -39,6 +39,7 @@ class StudentsController < ApplicationController
     @list_scores = Score.where(student_id: @student_id)
     @average_score = Score.where(student_id: @student_id).average(:point)
     @max_score = Score.where(student_id: @student_id).maximum(:point)
+    
     @max_subject = Score.where(student_id: @student_id).where(point: @max_score).pluck(:subject)[0]
   end
 
