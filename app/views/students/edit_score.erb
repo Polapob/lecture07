@@ -1,0 +1,39 @@
+<div id="scores">
+    <div class = "flex">Show all of student score</div>
+    <div class = "flex">
+    <% @list_scores.each do |score| %>
+    <div class = "flex">
+        <div class = "flex">
+            <div>Subject</div>
+            <div><%= score.subject %></div>
+        </div>
+         <div class = "flex">
+            <div>Point</div>
+            <div><%= score.point %></div>
+        </div>
+        <div class = "flex">
+            <div>Grade</div>
+            <div><%= score.grade %></div>
+        </div>
+         <div class = "flex">
+            <div>Student_ID</div>
+            <div><%= score.student_id %></div>
+        </div>
+    </div>
+    <div class = "flex">
+      <%= link_to "Show this score", score %>
+      <%= button_to "Destroy this score", score, method: :delete %>
+      <%= button_to "Edit the score",score, method: :update %>
+    </div>
+  <% end %>
+    </div>
+</div>
+<style>
+    .flex{
+        display:flex;
+        column-gap: 8px;
+        justify-content:center;
+        align-items:center
+        
+    }
+</style>
